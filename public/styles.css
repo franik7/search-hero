@@ -15,7 +15,7 @@ body {
 
 .card-img-top {
   width: 100%;
-  height: vw;
+  height: 16vw;
   object-fit:contain;
 }
 
