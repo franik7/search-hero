@@ -1,0 +1,21 @@
+body {
+  background-color: snow;
+}
+
+#products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#view-all{
+  display: none;
+}
+
+.card-img-top {
+  width: 100%;
+  height: vw;
+  object-fit:contain;
+}
+
