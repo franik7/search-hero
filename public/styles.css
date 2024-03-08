@@ -19,3 +19,15 @@ body {
   object-fit:contain;
 }
 
+.card {
+  overflow: hidden; 
+}
+
+.card-img-top {
+  transition: transform 1s ease; 
+}
+
+.card-img-top:hover {
+  transform: scale(1.20); 
+}
+
