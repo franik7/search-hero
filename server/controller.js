@@ -16,8 +16,12 @@ const sql = new sequelize.Sequelize(CONNECTION_STRING)
 
 
 module.exports = {
+    getHomePage: (req, res) => {
+        res.sendFile('index.html');
+    },
+
     getProducts: (req, res) => {
-            sql.query('SELECT * FROM products').then(sqlResult => {
+            sql.query('SELECT * FROM products order by id asc;').then(sqlResult => {
                 const products = sqlResult[0];
                 console.log(sqlResult[0])
                 res.status(200).send(products)
@@ -32,8 +36,8 @@ module.exports = {
         const email = req.body.email
 
         const SQL_CODE = `
-            INSERT INTO products (product_name, email, url, created_at)
-            VALUES ('${product_name}', '${email}', '${url}', CURRENT_TIMESTAMP);
+            INSERT INTO products (product_name, email, url, created_at, likes)
+            VALUES ('${product_name}', '${email}', '${url}', CURRENT_TIMESTAMP, 0);
             
             `
         console.log(product_name, url, email) 
@@ -74,6 +78,16 @@ module.exports = {
         })
     },
 
+    sortByLikes: (req, res) => {
+        sql.query('SELECT * FROM products order by likes desc;').then(sqlResult => {
+            const products = sqlResult[0];
+            console.log(sqlResult[0])
+            res.status(200).send(products)
+        }).catch(err => {
+            res.status(500).send(err)
+        })
+    },
+
     emailAboutProduct: (req, res) => {
             const{ id } = req.params
             sql.query(`select product_name, email from products where id = ${id}`)
@@ -84,6 +98,22 @@ module.exports = {
             .catch(err => {
                 res.status(500).send(err)
             })
+    },
+
+    updateLikes: (req, res) => {
+        let { id } = req.params
+        let { likes } = req.body
+
+        const SQL_CODE = `UPDATE products SET likes = likes + 1 where id = ${id};
+        select * from products
+        order by id asc;
+        `
+
+        sql.query(SQL_CODE).then(sqlResult => {
+            res.status(200).send(sqlResult[0])
+        }).catch(err => {
+            res.status(500).send(err)
+        })
     }
 }       
         
