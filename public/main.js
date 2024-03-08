@@ -6,8 +6,8 @@ const sortByNameButton = document.querySelector("#sort-by-name")
 const sortByDateButton = document.querySelector("#sort-by-date")
 const sortByLikesButton = document.querySelector("#sort-by-likes")
 
-const baseURL = `http://localhost:5678/api/products`
-// const baseURL = `https://product-finder-e2ej.onrender.com/api/products`
+// const baseURL = `http://localhost:5678/api/products`
+const baseURL = `https://productfinder-5frz.onrender.com//api/products`
 
 const productsCallback = products => {
   console.log("Products received in frontend:", products)
