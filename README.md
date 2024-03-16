@@ -1,6 +1,6 @@
 <br/>
 <p align="center">
-  <a href="search-hero.onrender.com/">
+ [ [I'm an inline-style link with title](https://www.google.com "Google's Homepage")](https://search-hero.onrender.com/#)
     <img src="/public/assets/product_finder.png" alt="Logo" width="80" height="80">
   </a>
 
