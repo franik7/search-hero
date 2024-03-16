@@ -7,8 +7,8 @@ const sortByDateButton = document.querySelector("#sort-by-date")
 const sortByLikesButton = document.querySelector("#sort-by-likes")
 
 
-// const baseURL = `http://localhost:5678/api/products`
-const baseURL = `https://search-hero.onrender.com/api/products`
+const baseURL = `http://localhost:5678/api/products`
+// const baseURL = `https://search-hero.onrender.com/api/products`
 
 const productsCallback = products => {
   console.log("Products received in frontend:", products)
@@ -42,7 +42,6 @@ const deleteProduct = id => axios.delete(`${baseURL}/${id}`)
 
 
 const updateLike = (id, likes) => axios.put(`${baseURL}/${id}`, {likes})
-
 .then(() => {
   console.log(`Product with id:${id} updated`)
   productsCallback
@@ -129,7 +128,6 @@ function createProductCard(product) {
     </div>
   </div>
 </div>
-
 `;
 
 
