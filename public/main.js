@@ -7,8 +7,8 @@ const sortByDateButton = document.querySelector("#sort-by-date")
 const sortByLikesButton = document.querySelector("#sort-by-likes")
 
 
-const baseURL = `http://localhost:5678/api/products`
-// const baseURL = `https://search-hero.onrender.com/api/products`
+// const baseURL = `http://localhost:5678/api/products`
+const baseURL = `https://search-hero.onrender.com/api/products`
 
 const productsCallback = products => {
   console.log("Products received in frontend:", products)
