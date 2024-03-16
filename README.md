@@ -1,7 +1,8 @@
 <br/>
 <p align="center">
-(https://search-hero.onrender.com/)
+
     <img src="/public/assets/product_finder.png" alt="Logo" width="80" height="80">
+    (https://search-hero.onrender.com/)
   </a>
 
   <h3 align="center">ReadME Generator</h3>
