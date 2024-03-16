@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
-  <a href="https://github.com/ShaanCoding/ReadME-Generator">
-    <img src="public/assets/product_finder" alt="Logo" width="80" height="80">
+  <a href="https://search-hero.onrender.com/)">
+    <img src="./public/assets/product_finder" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">ReadME Generator</h3>
