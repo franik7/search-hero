@@ -1,12 +1,14 @@
-const dotenv = require('dotenv')
+// seed.js
+const dotenv = require('dotenv');
 const sequelize = require('sequelize');
 
 dotenv.config();
 
-const sql = new sequelize.Sequelize(process.env.CONNECTION_STRING)
+const sql = new sequelize.Sequelize(process.env.CONNECTION_STRING);
 
-const SQL_CODE = `
-DROP TABLE PRODUCTS;
+const seedDatabase = async () => {
+  const SQL_CODE = `
+   DROP TABLE PRODUCTS;
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
   product_name VARCHAR(255),
@@ -24,10 +26,14 @@ VALUES
   ('Peach', 'https://t3.ftcdn.net/jpg/03/00/59/16/360_F_300591692_sE2Zpz9hoU0H1Klz0JzRw1F74HO7vWne.jpg', 'franik@franik.com', CURRENT_TIMESTAMP, 5),
   ('Peach', 'https://t3.ftcdn.net/jpg/03/00/59/16/360_F_300591692_sE2Zpz9hoU0H1Klz0JzRw1F74HO7vWne.jpg', 'franik@franik.com', CURRENT_TIMESTAMP, 0),
   ('Peach', 'https://t3.ftcdn.net/jpg/03/00/59/16/360_F_300591692_sE2Zpz9hoU0H1Klz0JzRw1F74HO7vWne.jpg', 'franik@franik.com', CURRENT_TIMESTAMP, 7);
-`
+  `;
 
-sql.query(SQL_CODE).then(sqlResult => {
-    console.log('successfully seeded the database')
-}).catch(err => {
-    console.log('failed to seed the database', err)
-})
+  try {
+    await sql.query(SQL_CODE);
+    console.log('Successfully seeded the database');
+  } catch (error) {
+    console.error('Failed to seed the database', error);
+  }
+};
+
+module.exports = seedDatabase;
