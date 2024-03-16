@@ -1,6 +1,6 @@
 <br/>
 <p align="center">
-  <a href="https://search-hero.onrender.com/)">
+  <a href="https:/search-hero.onrender.com/)">
     <img src="/public/assets/product_finder.png" alt="Logo" width="80" height="80">
   </a>
 
