@@ -66,7 +66,7 @@ To install Search Hero locally:
 
 5. Start the server:
     ```bash
-    npm start
+    node server/index.js
 
 6. Start the server:
     Visit http://localhost:5678 in your web browser to access Search Hero locally.
